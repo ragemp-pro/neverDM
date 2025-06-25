@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Взлом замка (Vue)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hijacking">
+    <div id="bg">
+      <h1>Взлом замка</h1>
+      <h2>Нажимайте на серую область — она будет подниматься. Когда вы достигнете конца замка, он зависнет, и вы сможете начинать взламывать следующий замок</h2>
+      <div
+        class="lock"
+        v-for="(lock, index) in locks"
+        :key="index"
+        @click="raiseKey(index)"
+      >
+        <div class="key" :style="{ bottom: lock.keyPosition + 'px' }"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

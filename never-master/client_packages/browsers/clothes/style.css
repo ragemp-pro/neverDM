@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rubik+Mono+One&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+#close {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+#close:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#close img {
+    width: 30px;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+#category {
+    left: 20px;
+    top: 300px;
+    display: flex;
+    gap: 10px; 
+}
+
+.category {
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.category:hover {
+    background-color: rgba(0, 0, 0, 1);
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+#content {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 270px;
+    height: 600px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    overflow-y: auto; 
+}
+
+#content::-webkit-scrollbar {
+    display: none;
+}
+
+#clothes {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    width: 100%;
+    min-width: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#outerwear, #footwear, #bottoms, #boughtClothes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+#clothes {
+    width: 40%; 
+    margin-bottom: 10px;
+}
+
+#clothes span {
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    font-size: 12px; 
+    font-weight: 300;
+    opacity: 0.6; 
+    margin-bottom: 10px;
+}
+
+#clothes button {
+    margin-top: 5px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+#clothes button:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.category.active {
+    background-color: rgba(0, 0, 0, 1); 
+}
+.content-section {
+    display: none;
+}
+.content-section.active {
+    display: flex;
+}
+
+#wardrobe {
+    box-sizing: border-box;
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#wardrobe:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#wardrobe.active {
+    background-color: rgba(0, 0, 0, 1);
+}

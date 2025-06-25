@@ -1,0 +1,104 @@
+.notification-container {
+    position: fixed;
+    bottom: 8px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 505px; 
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 8px;
+    user-select: none;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slide-in 0.5s forwards;
+    width: 100%;
+    max-width: 505px; 
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50px); 
+    }
+}
+
+.notification {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.notification.slide-out {
+    animation: slide-out 1s forwards;
+}
+
+.notification-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.notification-header {
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 16px; 
+}
+
+.notification-body {
+    font-size: 12px;
+    opacity: 0.8; 
+}
+
+.notification.alert .notification-icon {
+    background-image: url('icons/alert.svg'); 
+}
+
+.notification.success .notification-icon {
+    background-image: url('icons/success.svg'); 
+}
+
+.notification.error .notification-icon {
+    background-image: url('icons/error.svg'); 
+}
+
+.notification.info .notification-icon {
+    background-image: url('icons/info.svg'); 
+}

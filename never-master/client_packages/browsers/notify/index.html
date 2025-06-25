@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notify">
+        <div class="notification-container">
+            <div v-for="(notification, index) in notifications" 
+                 :key="index" 
+                 :class="['notification', notification.type, {'slide-out': !notification.visible}]">
+                <div class="notification-content">
+                    <div class="notification-header">{{ notification.title || 'Без заголовка' }}</div>
+                    <div class="notification-body">{{ notification.message || 'Нет сообщения' }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

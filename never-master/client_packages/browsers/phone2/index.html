@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>phone never project</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="iphone-container">
+    <div class="iphone" id="iphone">
+      <div class="notch"></div>
+      
+      <div class="screen">
+        <div class="mobile">
+          <h1 id="mobile">N-Mobile</h1>
+        </div>
+        <div class="wifi">
+          <img src="./img/connect.svg">
+          <h1 id="connect">LTE</h1>
+          <img src="./img/battery.svg" id="battery">
+          <div class="was27alks"></div>
+        </div>
+        <div class="content">
+        
+          <div id="welcome">
+            <div class="date">
+              <h2 id="date">Суббота, 2 ноября</h2>
+              <h1 id="time">22:17</h1>
+            </div>
+          </div> 
+          <div id="garage-content" style="display: none;">
+            <h1 id="title">Ваш транспорт</h1>
+            <div id="car-list">
+            </div>
+            <div class="close"></div>
+          </div>
+          <div id="shop-content">
+            <h1 id="title-item">Покупка предметов</h1>
+            <div id="list-item">
+              <div class="gun">
+                <h1>Бронежилет</h1>
+                <h2>500 $</h2>
+                <button onclick="mp.trigger('buyweapon', 'armor', 500, 'Бронежилет')">Купить</button>
+
+              </div>
+              <div class="gun">
+                <h1>Аптечка</h1>
+                <h2>500 $</h2>
+                <button onclick="mp.trigger('buyweapon', 'health', 500, 'Аптечка')">Купить</button>
+
+              </div>
+            </div>
+            <h1 id="title-shop">Покупка оружия</h1>
+            <div id="list-guns">
+
+
+            </div>
+            <div class="close"></div>
+          </div>
+          <div id="bank-content">
+            <div id="bg-card">
+                <div id="card">
+                    <h1 id="number-card">**** 7439</h1>
+                    <h1 id="term-card">05/26</h1>
+                    <div id="balance-card">
+                        <h1 id="title-card">Баланс:</h1>
+                        <h1 id="balance">$91 130 000</h1>
+                    </div>
+                </div>
+                <div id="transfer">
+                    <div id="transfer-inputs">
+                        <input id="amount" type="number" placeholder="Сумма">
+                        <input id="static-id" type="number" placeholder="ID">
+                        <button id="transfer-button"><img src="./img/send.svg"></button>
+                    </div>
+                </div>
+                <div id="forbes">
+                  <span id="title-forbes">10 самых богатых игроков</span>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  <div class="forbes-entry">
+                    <span class="nickname">Kai Angel</span>
+                    <span class="amount">1,000,000,000</span>
+                  </div>
+                  
+                </div>
+            </div>
+            <div class="close"></div>
+          </div>
+          <div id="menu">
+            <div id="apps">
+                <div class="widget">
+                    <h1 id="city">never</h1>
+                    <h1 id="degree">10°</h1>
+                    <h2 id="weather">Солнечно</h2>
+                    <span>Погода</span>
+                  </div>
+                <div class="app-container">
+                  <div id="garage-app" class="app" style="background: linear-gradient(180deg, #cac9d1 0%, #9a999f 100%); ">
+                    <img src="./img/garage.svg" class="app-icon" style="margin-bottom: 4px;">
+                    <span>Гараж</span>
+                  </div>
+                  <div class="app" id="bank-app" style="background: radial-gradient(circle at 30% 30%, #FFA500, #FF8C00 50%, #FF4500 90%);">
+                      <img src="./img/bank.svg" class="app-icon" style="margin-bottom: 4px;">
+                      <span>Банк</span>
+                  </div>
+                
+                </div>
+            </div>
+            <div id="fast-menu">
+                <div class="app-fast" style="background: linear-gradient(180deg, #a0f58a 0%, #5acf56 100%);">
+                    <img src="./img/phone.svg" class="app-icon-fast">
+                </div>
+                <div class="app-fast" style="background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);">
+                    <img src="./img/safari.svg" class="app-icon-fast">
+                </div>
+                <div class="app-fast" style="background: linear-gradient(180deg, #a0f58a 0%, #5acf56 100%);">
+                    <img src="./img/sms.svg" class="app-icon-fast">
+                </div>
+                <div class="app-fast" style="background: linear-gradient(180deg, #e86878 0%, #e63c40 100%);">
+                    <img src="./img/music.svg" class="app-icon-fast">
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        <div id="close"></div>
+        <div id="swipe-text">Смахните вверх, чтобы разблокировать...</div>
+      </div>
+    </div>
+    <div class="power-button"></div>
+    <div class="mode-switch-button"></div>
+    <div class="volume-button volume-up"></div>
+    <div class="volume-button volume-down"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+</html>

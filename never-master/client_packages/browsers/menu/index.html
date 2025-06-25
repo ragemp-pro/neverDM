@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main menu never</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <div class="sidebar">
+            <div class="tab" id="fractionTab">
+                <img src="./img/frac.svg" alt="Fraction Icon">
+                <span>Фракции</span>
+            </div>  
+            <div class="tab" id="gamesTab">
+                <img src="./img/game.svg" alt="Games Icon">
+                <span>Режимы</span>
+            </div>
+            <div class="tab" id="shopTab">
+                <img src="./img/shop.svg" alt="Shop Icon">
+                <span>Магазин</span>
+            </div>
+            <div class="tab" id="carTab">
+                <img src="./img/cars.svg" alt="Cars Icon">
+                <span>Машины</span>
+            </div>
+            <div class="tab" id="gunsTab">
+                <img src="./img/gun.svg" alt="Guns Icon">
+                <span>Оружие</span>
+            </div>
+            <div class="tab" id="reportsTab">
+                <img src="./img/report.svg" alt="Report Icon">
+                <span>Репорты</span>
+            </div>
+            <div class="tab" id="settingsTab">
+                <img src="./img/settings.svg" alt="Settings Icon">
+                <span>Настройки</span>
+            </div>
+        </div>
+        <div class="content" id="Reportscontent">
+            <div id="report-content">
+                <div id="report-number">
+                    <div id="back"><img src="./img/back.svg"></div>
+                    Репорт #1
+                    <div id="delete"><img src="./img/delete.svg"></div>
+                </div>
+                <div id="messages">
+
+                </div>
+                <div id="enter">
+                    <input type="text" id="message-input" placeholder="Введите сообщение...">
+                    <div id="send">
+                        <img src="./img/send.svg" alt="Send">
+                    </div>
+                </div>            
+            </div>
+            <div id="reports">
+                <div id="report-header">
+                    Список ваших репортов
+                    <div id="add-report"><img src="./img/add.svg"></div>
+                </div>
+                <div id="reportss">
+
+                </div>
+            </div>     
+        </div>
+        <div class="content" id="Carcontent">
+            <div id="header">Машины</div>
+            <div id="cars">
+            </div> 
+            
+        </div>
+        <div class="content" id="Gamescontent">
+            <div id="header">Режимы</div>
+            <div id="modes">
+                <div class="mode" id="gangwar">
+                    <div id="data-mode">
+                        <div class="online-counter" id="online-gangwar">
+                            <div id="online"></div>100000000
+                        </div>
+                        <img src="./img/mode/0.png">
+                    </div>
+                    <h1 id="title-mode">gang war</h1>
+                    <h2 id="description-mode">Lorem ipsum dolor sit amet consectetur. Suspendisse sagittis mattis fusce praesent senectus.</h2>
+                    <button id="play-gangwar" onclick="mp.trigger('changeMode', 0)">Играть</button>
+                </div>
+                <div class="mode" id="revolver">
+                    <div id="data-mode">
+                        <div class="online-counter" id="online-revolver">
+                            <div id="online"></div>100000000
+                        </div>
+                        <img src="./img/mode/1.png">
+                    </div>
+                    <h1 id="title-mode">revolver dm</h1>
+                    <h2 id="description-mode">Lorem ipsum dolor sit amet consectetur. Suspendisse sagittis mattis fusce praesent senectus.</h2>
+                    <button id="play-revolver" onclick="mp.trigger('changeMode', 1)">Играть</button>
+                </div>
+                <div class="mode" id="carabin">
+                    <div id="data-mode">
+                        <div class="online-counter" id="online-carabin">
+                            <div id="online"></div>100000000
+                        </div>
+                        <img src="./img/mode/1.png">
+                    </div>
+                    <h1 id="title-mode">carabin dm</h1>
+                    <h2 id="description-mode">Lorem ipsum dolor sit amet consectetur. Suspendisse sagittis mattis fusce praesent senectus.</h2>
+                    <button id="play-carabin" onclick="mp.trigger('changeMode', 2)">Играть</button>
+                </div>
+                <div class="mode" id="sniper">
+                    <div id="data-mode">
+                        <div class="online-counter" id="online-sniper">
+                            <div id="online"></div>100000000
+                        </div>
+                        <img src="./img/mode/1.png">
+                    </div>
+                    <h1 id="title-mode">sniper dm</h1>
+                    <h2 id="description-mode">Lorem ipsum dolor sit amet consectetur. Suspendisse sagittis mattis fusce praesent senectus.</h2>
+                    <button id="play-sniper" onclick="mp.trigger('changeMode', 3)">Играть</button>
+                </div>
+            </div>
+        </div>    
+        <div class="content" id="Fractioncontent">
+            <div id="header">Выбор фракции</div>
+            <div id="fractions">
+                <div class="frac" id="families"><h1>The Families</h1> <img src="./img/frac/families.svg" style="bottom: -10px; height: 100px; right: 10px;"></div>
+                <div class="frac" id="ballas"><h1>The Ballas Gang</h1> <img src="./img/frac/ballas.svg" style="height: 80px; right: 10px;"></div>
+                <div class="frac" id="vagos"><h1>Los Santos Vagos</h1> <img src="./img/frac/vagos.svg" style="height: 70px; bottom: -10px; left: 10px;"></div>
+                <div class="frac" id="marabunta"><h1>Marabunta Grande</h1> <img src="./img/frac/marabunta.svg" style="right: 10px; height: 70px;"></div>
+                <div class="frac" id="bloods" ><h1>The Bloods Street</h1> <img src="./img/frac/bloods.svg" style="right: 10px; height: 70px;"></div>
+                <div class="frac" id="FIB"><h1>FIB</h1> <img src="./img/frac/fib.svg" style="right: 10px; height: 70px;"></div>
+            </div>
+            <div id="spoiler">
+                <span>После выбор фракции, будет КД на её смену в два дня.</span>
+            </div>
+        </div>
+        <div class="content" id="GunsContent">
+            <div id="header">Магазин оружия</div>
+
+
+            <div id="list-guns">
+
+            </div>
+        </div>
+        <div class="content" id="SettingsContent">
+            <div id="header">Настройки</div>
+        </div>
+        <div class="content" id="ShopContent">
+            <div id="header">Магазин <h2 id="menu-dp">100 DP</h2><img src="./img/reboot.svg" id="reboot-DP" onclick="mp.trigger('getDP')"><img src="./img/add2.svg" id="add-DP"></div>
+            <div class="category-shop" id="vips">
+                <h1>Вип</h1>
+                <h2>Lorem ipsum dolor sit amet consectetur. Facilisi sagittis aliquam curabitur tellus quam mauris in id dolor. Tortor sit purus ornare amet felis faucibus. Nunc in nunc a gravida consequat.</h2>
+                <img src="./img/shop/vip.svg">
+            </div> 
+            <div class="category-shop">
+                <h1>Оружие</h1>
+                <h2>Lorem ipsum dolor sit amet consectetur. Facilisi sagittis aliquam curabitur tellus quam mauris in id dolor. Tortor sit purus ornare amet felis faucibus. Nunc in nunc a gravida consequat.</h2>
+                <img src="./img/shop/guns.svg" style="width: 200px; bottom: -60px;">
+            </div>
+            <div class="category-shop">
+                <h1>Основное</h1>
+                <h2>Lorem ipsum dolor sit amet consectetur. Facilisi sagittis aliquam curabitur tellus quam mauris in id dolor. Tortor sit purus ornare amet felis faucibus. Nunc in nunc a gravida consequat.</h2>
+                <img src="./img/shop/basic.svg">
+            </div>
+        </div>
+        <div class="content" id="vipContent">
+            <div id="header">Вип <h2 id="vip-dp">100 DP</h2><img src="./img/reboot.svg" id="reboot-DP" onclick="mp.trigger('getDP')"><img src="./img/add2.svg" id="add-DP"></div>
+
+            <div id="items-vips">
+                <div class="item-vip">
+                    <h1>Сильвер вип</h1>
+                    <h2>Lorem ipsum dolor sit amet consectetur. Facilisi sagittis aliquam curabitur tellus quam mauris in id dolor. Tortor sit purus ornare amet felis faucibus. Nunc in nunc a gravida consequat.</h2>
+                    <button onclick="mp.trigger('buyVIP', 'silver')">Приобрести <div id="price-vip">300 DP</div></button>
+                </div> 
+                <div class="item-vip">
+                    <h1>Голд вип</h1>
+                    <h2>Lorem ipsum dolor sit amet consectetur. Facilisi sagittis aliquam curabitur tellus quam mauris in id dolor. Tortor sit purus ornare amet felis faucibus. Nunc in nunc a gravida consequat.</h2>
+                    <button onclick="mp.trigger('buyVIP', 'gold')">Приобрести <div id="price-vip">400 DP</div></button>
+                </div> 
+            </div>
+            <div id="vip-hi">
+                <h1>Платинум вип</h1>
+                <h2>Lorem ipsum dolor sit amet consectetur. Facilisi sagittis aliquam curabitur tellus quam mauris in id dolor. Tortor sit purus ornare amet felis faucibus. Nunc in nunc a gravida consequat.</h2>
+                <button onclick="mp.trigger('buyVIP', 'platinum')">Приобрести <div id="price-vip">999 DP</div></button>
+            </div>
+            <h1 id="disc">Вип покупается навсегда</h1>
+        </div>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+<script src="./js/index.js"></script>

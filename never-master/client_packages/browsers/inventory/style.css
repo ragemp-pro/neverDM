@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rubik+Mono+One&display=swap');
+
+* {
+    user-select: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#bg {
+    width: 150vh;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start; 
+    position: relative !important;
+    display: flex !important; 
+}
+
+#slots {
+    padding-top: 2vh; 
+    position: relative; 
+}
+
+#title-slots {
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-size: 1.2vh;
+    font-weight: 300;
+    position: absolute;
+    left: 2.5vh;
+    top: 1vh;
+}
+
+#title-fast {
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-size: 1.2vh;
+    font-weight: 300;
+    position: relative;
+    left: 1.5vh;
+    top: -1vh;
+}
+
+#slots-count {
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    font-size: 1.2vh;
+    color: #fff;
+    position: absolute;
+    right: 2.5vh; 
+    top: 1vh;
+}
+#sllots {
+    display: flex;
+    flex-wrap: wrap;
+}
+#slots, #fastslots {
+    padding: 2vh;
+    border-radius: 0.7vh;
+    width: 60%; 
+    margin: 0.5vh;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start; 
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+}
+#slots::-webkit-scrollbar {
+    display: none;
+}
+#fastslots {
+    width: 40vh; 
+    display: block;
+}
+.slot {
+    margin: 0.3vh;
+    width: 6.5vh;
+    border-radius: 0.7vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5vh;
+    transition: background-color 0.3s ease;
+    position: relative;
+    top: 2vh;
+}
+
+.slot:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+.slot.active {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.slot img {
+    width: 100%;
+    height: 4.3vh;
+    object-fit: contain;
+    margin-top: 1vh;
+}
+
+.slot span{
+    color: white;
+    font-size: 1vh;
+    font-weight: 300;
+    opacity: 0.5;
+    font-family: "Roboto Flex", serif;
+}
+
+.context-menu {
+    margin-top: 0.5vh;
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 0.5vh;
+    padding: 0.5vh;
+    z-index: 100;
+    width: 11vh;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transform-origin: top;
+    transition: opacity 0.3s ease;
+}
+
+.context-menu.show {
+    opacity: 1;
+}
+
+.context-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu ul li {
+    padding: 0.6vh 1vh;
+    cursor: pointer;
+    opacity: 0.5;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.1vh;
+}
+
+.fast {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 10vh;
+    margin: 1vh auto; 
+    padding: 0.5vh;
+    border-radius: 0.7vh;
+    position: relative;
+    transition: background-color 0.3s ease; 
+    box-sizing: border-box;
+
+}
+
+.fast:hover {
+    background-color: rgba(0, 0, 0, 1); 
+}
+
+.fast img {
+    display: block;
+    margin: 1.3vh auto;
+    max-width: 80%;
+    max-height: 50%;
+    opacity: 0.8;
+}
+
+.fast span {
+    color: white;
+    font-size: 1.2vh;
+    font-weight: 300;
+    text-align: center;
+    opacity: 0.5;
+    margin-top: auto;
+    display: block;
+}
+
+#secondaryFast {
+    display: flex;
+    justify-content: center;
+    gap: 1vh;
+    width: 100%;
+}
+
+.secondary {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 10vh;
+    margin: 0;
+    padding: 0.5vh;
+    border-radius: 0.7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center; 
+    transition: background-color 0.3s ease; 
+    box-sizing: border-box;
+}
+
+.secondary:hover {
+    background-color: rgba(0, 0, 0, 1); 
+}
+
+.secondary img {
+    max-height: 60%;
+    object-fit: contain;
+    margin-top: 1vh;
+    display: block; 
+}
+
+.secondary span {
+    color: white;
+    font-size: 1.2vh;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0.5;
+    margin-top: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+#hint {
+    color: #fff;
+    position: absolute; 
+    top: calc(90vh + 1vh); 
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center;
+}
+
+#hint h1 {
+    font-size: 1.4vh; 
+    font-family: "Roboto Flex", serif;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-weight: 400;
+}
+
+#hint img {
+    margin-right: -0.3vh;
+    width: 2.8vh; 
+    height: 2.8vh; 
+    margin-left: 0.5vh;
+    vertical-align: middle;
+}
+#title-slots, #title-fast, #slots-count {
+    white-space: nowrap;  
+}
+
+.context-menu ul li {
+    white-space: nowrap;  
+}
+
+.slot span {
+    white-space: nowrap;  
+}
+
+.fast span {
+    white-space: nowrap;  
+}
+
+.secondary span {
+    white-space: nowrap;  
+}
+
+.button-n {
+    font-size: 1vh; 
+    font-family: "Roboto Flex", serif;
+    position: absolute;
+    color: #fff;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0);
+    padding: 0.5vh 0.8vh;
+    border-radius: 0.5vh;
+    right: 1vh;
+    bottom: 0;
+}
+
+#slots-fast {
+    width: 100%;
+}
+
+#inventory {
+    display: contents; /* чтобы не добавлялся лишний контейнер в поток */
+}
+  

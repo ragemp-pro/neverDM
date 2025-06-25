@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Blocked</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="ban" class="container">
+    <div class="block-message">
+      <h2>
+        ВАШ АККАУНТ ЗАБЛОКИРОВАН
+        <span><img src="./img/ban.svg" alt="ban icon" class="ban-icon"></span>
+      </h2>
+      <p><strong>Ваш логин:</strong> <span>{{ user.username }}</span></p>
+      <p><strong>Статический айди:</strong> <span>{{ user.staticId }}</span></p>
+      <p><strong>Администратор:</strong> <span>{{ user.moderator }}</span></p>
+      <p><strong>Дата блокировки:</strong> <span>{{ user.banStart }}</span></p>
+      <p><strong>Дата разблокировки:</strong> <span>{{ user.banEnd }}</span></p>
+      <p><strong>Причина:</strong> <span>{{ user.reason }}</span></p>
+      <p class="note">
+        Вы можете обжаловать блокировку, или подать амнистию в дискорде проекта
+      </p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

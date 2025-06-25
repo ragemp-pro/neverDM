@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>hud</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div id="hud">
+    <div v-if="initialized">
+      <div id="status-container">
+        <transition name="fade">
+          <div v-if="showAdm" id="adm">ADMIN MODE</div>
+        </transition>
+        <transition name="fade">
+          <div v-if="showGreenZone" id="green-zone">GREEN ZONE</div>
+        </transition>
+      </div>
+    
+      <div id="data">
+        <div id="info">
+          <h1><span style="color: #000;">never</span> project</h1>
+          <p id="subheading">(123) Kai Angel #12312321</p>
+          <p id="nn"><img src="img/online.svg" id="online-icon"> 123123</p>
+        </div>
+      </div>
+    
+      <transition name="fade">
+        <img v-if="showMic" src="./img/mic.svg" id="mic" />
+      </transition>
+    </div>
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

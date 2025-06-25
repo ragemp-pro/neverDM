@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ebalkin</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <div id="carsShop">
+    <div id="close" @click="closeBrowser">
+      <img src="./img/close.svg">
+    </div>
+
+    <div id="cars">
+      <div
+        class="car"
+        v-for="car in sortedCars"
+        :key="car.model"
+        :class="{ selected: selectedCar && selectedCar.model === car.model }"
+        @click="selectCar(car)"
+      >
+        <div class="info">
+          <h1>{{ car.name }}</h1>
+          <h2>{{ car.category }}</h2>
+        </div>
+        <h3>{{ formatPrice(car.price) }}</h3>
+      </div>
+    </div>
+
+    <div id="buy" @click="buyCar" :class="{ 'fade-in': showBuyBlock }">
+      <h1 id="buy-name">{{ selectedCar?.name || 'Название' }}</h1>
+      <h2 id="buy-price">{{ selectedCar ? formatPrice(selectedCar.price) : 'Цена' }}</h2>
+      <h3>Нажмите на кнопку, чтобы купить машину</h3>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

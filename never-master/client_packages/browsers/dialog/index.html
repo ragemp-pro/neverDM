@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Диалог</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="dialog">
+    <div id="bg">
+      <div id="dialog">
+        <h1>{{ dialogData.name }}</h1>
+        <h2>{{ dialogData.text }}</h2>
+      </div>
+      <div id="interaction">
+        <button @click="trigger1">{{ dialogData.button1 }}</button>
+        <button @click="trigger2">{{ dialogData.button2 }}</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

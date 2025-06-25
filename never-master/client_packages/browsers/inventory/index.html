@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="inventory">
+    <div id="bg">
+      <div id="slots">
+        <h1 id="title-slots">Инвентарь</h1>
+        <h1 id="slots-count">{{ inventory.length }}</h1>
+        <div id="sllots">
+          <div v-for="(item, index) in inventory" :key="index" class="slot">
+            <img :src="`./img/${item}.png`" />
+            <span :style="{ fontSize: getFontSize(item) }">{{ getItemName(item) }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="fastslots">
+        <h1 id="title-fast">Быстрые слоты</h1>
+        <div id="slots-fast">
+          <div
+            v-for="(slot, index) in fastSlots"
+            :key="'fast-' + index"
+            class="fast"
+          >
+            <h1 class="button-n">{{ index + 1 }}</h1>
+            <template v-if="slot.id">
+              <img :src="`./img/${slot.id}.png`" />
+              <span>{{ getItemName(slot.id) }}</span>
+            </template>
+          </div>
+          <div id="secondaryFast">
+          <div
+            v-for="(slot, index) in secondarySlots"
+            :key="'sec-' + index"
+            class="secondary"
+            v-bind:data-slot="index"
+            v-bind:data-item-id="slot.id"
+          >
+
+              <h1 class="button-n">{{ index + 4 }}</h1>
+              <template v-if="slot.id">
+                <img :src="`./img/${slot.id}.png`" />
+                <span>{{ getItemName(slot.id) }}</span>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hint">
+      <h1>
+        <img src="./img/hints/left.svg" /> — перемещение в быстрый слот
+        <img src="./img/hints/right.svg" /> — взаимодействие с предметом
+      </h1>
+    </div>
+
+    <div id="context-menu" class="context-menu">
+      <ul>
+        <li id="drop-item">Выбросить</li>
+        <li id="use-item" style="display: none;">Использовать</li>
+        <li id="quick-slot-item">В быстрый слот</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин одежды</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="clothesShop">
+    <div id="close" @click="closeShop">
+      <img src="./img/close.svg">
+    </div>
+
+    <div id="main-container">
+      <div id="category">
+        <div
+          class="category"
+          :class="{ active: activeCategory === 'outerwear' }"
+          @click="setCategory('outerwear')"
+        >Верхняя одежда</div>
+        <div
+          class="category"
+          :class="{ active: activeCategory === 'bottoms' }"
+          @click="setCategory('bottoms')"
+        >Низ</div>
+        <div
+          class="category"
+          :class="{ active: activeCategory === 'footwear' }"
+          @click="setCategory('footwear')"
+        >Обувь</div>
+      </div>
+
+      <div id="content">
+        <div
+          v-for="(items, category) in clothes"
+          :key="category"
+          :id="category"
+          class="content-section"
+          :class="{ active: activeCategory === category }"
+        >
+          <div v-for="item in items" :key="item.drawable" id="clothes">
+            <span class="item-name">{{ item.name }}</span>
+            <span class="item-price">{{ formatPrice(item.price) }}</span>
+            <button @click="buy(item)">Купить</button>
+            <button @click="tryOn(item)">Примерить</button>
+          </div>
+        </div>
+
+        <div
+          id="boughtClothes"
+          class="content-section"
+          :class="{ active: activeCategory === 'boughtClothes' }"
+        >
+          <div v-for="item in boughtClothes" :key="item.name" id="clothes">
+            <span class="item-name">{{ item.name }}</span>
+            <button @click="putOn(item)">Надеть</button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="wardrobe"
+        class="category"
+        :class="{ active: activeCategory === 'boughtClothes' }"
+        @click="requestBoughtClothes"
+      >Купленная одежда</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+    <script src="./js/index.js"></script>
+  </div>
+</body>
+</html>

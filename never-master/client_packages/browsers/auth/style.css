@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 16px;
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    margin-left: 20px;
+}
+
+.news-item {
+    display: flex;
+    margin-bottom: 15px; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item img {
+    width: 100px; 
+    height: 100px; 
+    min-width: 100px;
+    min-height: 100px;
+    object-fit: cover;
+    border-radius: 10px; 
+}
+.news-item span {
+    font-size: 12px;
+    opacity: 0.6;
+}
+.news-description {
+    margin-left: 10px; 
+    color: #E0E0E0; 
+}
+
+h2 {
+    color: #E0E0E0;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input-container {
+    position: relative;
+    margin: 15px 0;
+}
+
+.input-container i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+}
+
+.input-container i.active {
+    color: #fff; 
+}
+
+input {
+    width: calc(100% - 54px);
+    padding: 14px 14px 14px 40px; 
+    margin: 5px 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    outline: none;
+    color: #E0E0E0;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+}
+
+input::placeholder {
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+input.active {
+    background-color: rgba(0, 0, 0, 1); 
+}
+
+input.active::placeholder {
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #E0E0E0;
+}
+
+.switch-form span {
+    color: #E0E0E0;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+#notify {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: calc(85% + 20px); 
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    overflow: hidden; 
+    padding: 20px 30px;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10; 
+}
+
+#notify.visible {
+    opacity: 1; 
+}
+
+#notify.hidden {
+    opacity: 0;
+}
+
+#notify-header {
+    width: 8px; 
+    height: 80%; 
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    transform: translateY(-50%);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+
+#notify h1 {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0; 
+    text-align: left;
+
+}
+
+#notify h2 {
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+    margin-top: 2px;
+    font-weight: 400;
+    text-align: left;
+    opacity: 0.5;
+}

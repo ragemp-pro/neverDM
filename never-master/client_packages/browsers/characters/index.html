@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vue Character Selector</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="chooseCharacters">
+    <div id="bg">
+      <div id="characters">
+        <div
+          v-for="character in characters"
+          :key="character.id"
+          :class="['character-item', { selected: selectedCharacterId === character.id }]"
+          id="character"
+          @click="selectCharacter(character.id)"
+        >
+          <div class="img-container">
+            <img src="./img/character.png" class="img-charac" />
+          </div>
+          <div class="info">
+            <h1>{{ character.name }} {{ character.surname }}</h1>
+          </div>
+        </div>
+
+        <div
+          v-if="characters.length < 3"
+          id="character"
+          class="create-character"
+          @click="createCharacter"
+        >
+          <div class="img-container">
+            <img src="./img/create.png" class="img-charac" />
+          </div>
+          <div class="info">
+            <h2 class="add">+</h2>
+            <h1>Создать персонажа</h1>
+          </div>
+        </div>
+      </div>
+
+      <div id="info-account">
+        <div class="info-item">
+          <span>Логин</span>
+          <h1>{{ login }}</h1>
+        </div>
+        <div class="info-item">
+          <span>Social Club</span>
+          <h1>{{ socialClub }}</h1>
+        </div>
+        <div class="info-item">
+          <span>Donat Point's</span>
+          <h1>{{ DP }} DP</h1>
+        </div>
+        <button
+          id="go"
+          :class="{ active: selectedCharacterId !== null }"
+          @click="start"
+        >
+          Начать
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+<script src="./js/index.js"></script>

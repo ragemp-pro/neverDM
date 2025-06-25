@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ADM Menu - Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="admMenu">
+    <div id="bg"></div>
+
+    <div id="nav">
+      <button @click="activeTab = 'reports'">Репорты</button>
+      <button @click="activeTab = 'character'">Персонаж</button>
+      <button @click="activeTab = 'vehicles'">Машины</button>
+      <button @click="activeTab = 'console'">Консоль</button>
+    </div>
+
+    <div id="stats">
+      <span>{{ username }}</span>
+      <span>Level: {{ level }}</span>
+      <span>Reports: {{ reports }}</span>
+    </div>
+
+    <div id="content">
+      <div class="tab-content" :class="{ active: activeTab === 'vehicles' }">
+        <input v-model="carId" placeholder="id машины">
+        <button @click="searchVeh">Поиск</button>
+        <div id="data-veh"></div>
+      </div>
+
+      <div class="tab-content" :class="{ active: activeTab === 'character' }">
+        <input v-model="characterId" placeholder="id персонажа">
+        <button @click="searchCharacter">Поиск</button>
+        <div id="data-static"></div>
+      </div>
+
+      <div id="adm-reports" class="tab-content" :class="{ active: activeTab === 'reports', 'grid-mode': activeTab === 'reports' }">
+
+      </div>
+
+      <div id="adm-report-content" :style="{ display: reportOpen ? 'block' : 'none' }">
+        <button class="close-btn" @click="reportOpen = false">✖</button>
+        <div id="adm-report-number">Репорт #{{ reportId }}</div>
+        <div id="adm-messages"></div>
+
+        <div class="quick-messages">
+          <button v-for="msg in quickMessages" :key="msg" @click="admMessage = msg">{{ msg }}</button>
+        </div>
+
+        <input v-model="admMessage" placeholder="Введите сообщение...">
+
+        <div class="actions">
+          <button id="close-report-btn" @click="closeReport">Закрыть репорт</button>
+          <button id="adm-send-message" @click="sendMessage">Отправить</button>
+        </div>
+      </div>
+
+      <div class="tab-content" :class="{ active: activeTab === 'console' }" id="console">
+        <div id="output"></div>
+        <input
+          v-model="commandInput"
+          @input="handleCommandInput"
+          @keydown.enter="executeCommand"
+          @keydown.tab.prevent="autocompleteCommand"
+          id="commandInput"
+          placeholder="Введите команду..."
+        >
+        <div id="help" v-if="helpText" :style="{ color: helpColor }">{{ helpText }}</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/index.js"></script>
+</body>
+</html>

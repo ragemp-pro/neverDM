@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ebalkin</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <div id="helicoptersShop">
+    <div id="close" @click="closeBrowser">
+      <img src="./img/close.svg">
+    </div>
+
+    <div id="helicopters">
+      <div
+        class="helicopter"
+        v-for="helicopter in sortedHelicopters"
+        :key="helicopter.model"
+        :class="{ selected: selected && selected.model === helicopter.model }"
+        @click="selectHelicopter(helicopter)"
+      >
+        <div class="info">
+          <h1>{{ helicopter.name }}</h1>
+        </div>
+        <h3>{{ formatPrice(helicopter.price) }}</h3>
+      </div>
+    </div>
+
+    <div id="buy" @click="buyHelicopter" :class="{ 'fade-in': showBuyBlock }">
+      <h1 id="buy-name">{{ selected?.name || 'Название' }}</h1>
+      <h2 id="buy-price">{{ selected ? formatPrice(selected.price) : 'Цена' }}</h2>
+      <h3>Нажмите на кнопку, чтобы купить вертолет</h3>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

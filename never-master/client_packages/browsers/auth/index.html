@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container" id="auth">
+            <div id="loginForm">
+                <h2>Авторизация</h2>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="loginUsername" placeholder="Имя пользователя" onfocus="auth.activateInput(this)" onblur="auth.deactivateInput(this)">
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Пароль" onfocus="auth.activateInput(this)" onblur="auth.deactivateInput(this)">
+                </div>
+                <button @click="login()">Вход</button>
+                <p class="switch-form">Нету аккаунта? <span @click="showRegisterForm()">Зарегистрироваться</span></p>
+            </div>
+            <div id="registerForm" class="hidden">
+                <h2>Регистрация</h2>    
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="registerUsername" placeholder="Имя пользователя" onfocus="auth.activateInput(this)" onblur="auth.deactivateInput(this)">
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="registerEmail" placeholder="Электронная почта" onfocus="auth.activateInput(this)" onblur="auth.deactivateInput(this)">
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="registerPassword" placeholder="Пароль" onfocus="auth.activateInput(this)" onblur="auth.deactivateInput(this)">
+                </div>
+                <button @click="register()">Регистрация</button>
+                <p class="switch-form">Есть аккаунт? <span @click="showLoginForm()">Войдите</span></p>
+            </div>
+        </div>
+        <audio id="notification-sound" src="sounds/notify.mp3" preload="auto"></audio>
+
+        <div class="news-container">
+            <h2>Что нового?</h2>
+            <div class="news-item">
+                <img src="./img/2.png" alt="News 1">
+                <div class="news-description">
+                    <p>Dev-blog: Добавлен кастомный чат, переделаны интерйейсы аунтификации и выбора персонажа.</p>
+                    <span>20:00 21.09</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="./img/2.png" alt="News 2">
+                <div class="news-description">
+                    <p>Dev-blog: Добавлено создание персонажа</p>
+                    <span>12:00 21.09</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="./img/2.png" alt="News 3">
+                <div class="news-description">
+                    <p>Dev-blog: Начата разработка игрового мода</p>
+                    <span>00:00 19.09</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="notify">
+        <div id="notify-header"></div>
+        <h1>Не верный пароль</h1>
+        <h2>Попробуйте связаться с администрацией, они вам помогут</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

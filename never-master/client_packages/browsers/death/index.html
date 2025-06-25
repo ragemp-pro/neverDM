@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Death Screen</title>
+</head>
+<body>
+    <div class="death-screen" id="deathScreen">
+      <div class="center-content">
+        <img :src="deathImage" alt="Череп" class="skull" />
+        <p class="death-message">{{ deathMessage }}</p>
+      </div>
+
+      <div class="buttons">
+        <div class="button-container">
+          <button
+            class="button"
+            :class="{ disabled: !leftEnabled, enabled: leftEnabled }"
+            :disabled="!leftEnabled"
+            @click="spawn('spawn')"
+          >
+            Фракция
+          </button>
+          <span v-if="leftTime > 0" class="timer">{{ leftTime }}</span>
+        </div>
+
+        <div class="button-container">
+          <button
+            class="button"
+            :class="{ disabled: !rightEnabled, enabled: rightEnabled }"
+            :disabled="!rightEnabled"
+            @click="spawn('hospital')"
+          >
+            Больница
+          </button>
+          <span v-if="rightTime > 0" class="timer">{{ rightTime }}</span>
+        </div>
+      </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

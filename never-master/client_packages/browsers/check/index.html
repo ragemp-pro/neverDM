@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Подозрение на использование стороннего ПО</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="checkCheat" class="container">
+    <div class="image-container">
+      <img src="img/cheat.svg" alt="Cheat Icon">
+    </div>
+    <h1>Вас подозревают в использовании стороннего ПО</h1>
+    <p>Вы были вызваны на проверку за подозрение в использовании стороннего ПО. Если вы откажетесь пройти проверку, ваш аккаунт будет заблокирован. Чтобы пройти проверку, нажмите на кнопку ниже, скопируйте Discord тег администратора и зайдите с ним в голосовой канал. Следуйте указаниям администратора для завершения процесса проверки.</p>
+    <p>Нажмите на кнопку ниже, чтобы скопировать discord администратора.</p>
+    <button class="discord-button" @click="copyDiscord">{{ discordTag }}</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

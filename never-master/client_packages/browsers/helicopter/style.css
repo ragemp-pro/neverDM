@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rubik+Mono+One&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+#close {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+#close:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#close img {
+    width: 30px;
+}
+
+#helicopters {
+    left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 300px;
+    height: 600px;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: auto; 
+}
+
+#cars::-webkit-scrollbar {
+    display: none;
+}
+
+.helicopter {
+    box-sizing: border-box; 
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    height: 80px;
+    padding: 0 15px; 
+    transition: all 0.3s ease;
+}
+
+.helicopter:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.helicopter.selected {
+    background-color: rgba(0, 0, 0, 1); 
+}
+
+.helicopter .info {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.helicopter h1 {
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+}
+
+.helicopter h3 {
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#buy {
+    display: none; 
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    height: 80px;
+    width: 250px;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    opacity: 0;
+    
+}
+
+#buy.fade-in {
+    display: block; 
+    animation: fadeIn 0.3s forwards; 
+}
+
+#buy h1 {
+    position: relative;
+    top: 20px;
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+#buy h2 {
+    position: relative;
+    top: 30px;
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0.5;
+    margin: 0;
+    text-align: center;
+}
+
+#buy h3 {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 90px;
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10px;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap; 
+}
+
+#buy:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="initializeParents(); openCategory('family-content', document.getElementById('category-family'));">
+    <div id="close" onclick="mp.trigger('close-castom')">
+        <img src="./img/close.svg">
+    </div>
+    <div id="data">
+        <div id="customization">
+            <div id="category">
+                <div class="category" id="category-family" onclick="openCategory('family-content', this)">
+                    <img src="./img/category/family.svg">
+                    <h1 id="title-category">ДНК</h1>
+                </div>
+                <div class="category" id="category-face" onclick="openCategory('face-content', this)">
+                    <img src="./img/category/face.svg">
+                    <h1 id="title-category">ЛИЦО</h1>
+                </div>
+                <div class="category" id="category-clothes" onclick="openCategory('view-content', this)">
+                    <img src="./img/category/view.svg">
+                    <h1 id="title-category">ВИД</h1>
+                </div>
+                <div class="category" id="category-clothes" onclick="openCategory('clothes-content', this)">
+                    <img src="./img/category/clothes.svg">
+                    <h1 id="title-category">ОДЕЖДА</h1>
+                </div>
+                <div class="category" id="category-done" onclick="openCategory('done-content', this)">
+                    <img src="./img/category/done.svg">
+                    <h1 id="title-category">ГОТОВО</h1>
+                </div>
+            </div>
+            <div id="content">
+                <div id="family-content" class="content-section" style="display:none;">
+                    <div id="data-name">
+                        <input placeholder="Имя" id="name">
+                        <input placeholder="Фамилия" id="surname">
+                    </div>
+                    <div id="parents">
+                        <div id="parent-male" class="parent-display">
+                            <div class="parent-name-row">
+                                <button onclick="changeParent('male', -1)">&#10094;</button>
+                                <p id="male-name">Бенджамин</p>
+                                <button onclick="changeParent('male', 1)">&#10095;</button>
+                            </div>
+                            <div class="parent-controls">
+                                <img id="male-image" src="img/parents/male/Benjamin.png" alt="Father">
+                            </div>
+                        </div>
+                        
+                        <div id="parent-female" class="parent-display">
+                            <div class="parent-name-row">
+                                <button onclick="changeParent('female', -1)">&#10094;</button>
+                                <p id="female-name">Луиза</p>
+                                <button onclick="changeParent('female', 1)">&#10095;</button>
+                            </div>
+                            <div class="parent-controls">
+                                <img id="female-image" src="img/parents/female/Hannah.png" alt="Mother">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="slider-family">
+                        <h1 class="title-slider">Схожесть</h1>
+                        <input type="range" id="similaritySlider" min="0" max="100" value="50" steps="1" oninput="updateSimilarity(this.value)">
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <h2 id="female-t">Отец</h2>
+                            <h2 id="male-t">Мать</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="face-content" class="content-section" style="display:none;">
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина носа</h1>
+                        <input type="range" id="noseWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Высота носа</h1>
+                        <input type="range" id="noseHeightSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Длина носа</h1>
+                        <input type="range" id="noseLengthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Форма переносицы</h1>
+                        <input type="range" id="noseBridgeSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Кончик носа</h1>
+                        <input type="range" id="noseTipSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Смещение переносицы</h1>
+                        <input type="range" id="noseBridgeShiftSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Высота бровей</h1>
+                        <input type="range" id="browHeightSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина бровей</h1>
+                        <input type="range" id="browWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Высота скул</h1>
+                        <input type="range" id="cheekboneHeightSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина скул</h1>
+                        <input type="range" id="cheekboneWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина щек</h1>
+                        <input type="range" id="cheekWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Глаза</h1>
+                        <input type="range" id="eyeOpeningSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Толщина губ</h1>
+                        <input type="range" id="lipThicknessSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина челюсти</h1>
+                        <input type="range" id="jawWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Высота челюсти</h1>
+                        <input type="range" id="jawHeightSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Длина подбородка</h1>
+                        <input type="range" id="chinLengthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Позиция подбородка</h1>
+                        <input type="range" id="chinPositionSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина подбородка</h1>
+                        <input type="range" id="chinWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Форма подбородка</h1>
+                        <input type="range" id="chinShapeSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                    <div class="slider">
+                        <h1 class="title-slider">Ширина шеи</h1>
+                        <input type="range" id="neckWidthSlider" min="-1" max="1" value="0" step="0.01" oninput="updateCustomization()">
+                    </div>
+                    
+                </div>
+                <div id="clothes-content" class="content-section" style="display:none;">
+                    <div class="clothes">
+                        <h1>Верх</h1>
+                        <div id="clothes" onclick="selectClothing(11, 7)">
+                            <img src="./img/clothes.png">
+                            <span>Зипка</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(11, 3)"> 
+                            <img src="./img/clothes.png">
+                            <span>Ветровка</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(11, 9)"> 
+                            <img src="./img/clothes.png">
+                            <span>Рубашка</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(11, 0)"> 
+                            <img src="./img/clothes.png">
+                            <span>Футболка</span>
+                        </div>
+                        
+                    </div>
+                    <div class="clothes">
+                        <h1>Низ</h1>
+                        <div id="clothes" onclick="selectClothing(4, 3)">
+                            <img src="./img/clothes.png">
+                            <span>Штаны</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(4, 6)">
+                            <img src="./img/clothes.png">
+                            <span>Шорты</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(4, 5)">
+                            <img src="./img/clothes.png">
+                            <span>Спортивки</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(4, 1)">
+                            <img src="./img/clothes.png">
+                            <span>Джинсы</span>
+                        </div>
+                    </div>
+                    <div class="clothes">
+                        <h1>Обувь</h1>
+                        <div id="clothes" onclick="selectClothing(6, 32)">
+                            <img src="./img/clothes.png">
+                            <span>Повседневные</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(6, 31)">
+                            <img src="./img/clothes.png">
+                            <span>Спортивные</span>
+                        </div>
+                        <div id="clothes" onclick="selectClothing(6, 26)">
+                            <img src="./img/clothes.png">
+                            <span>Кеды</span>
+                        </div>  
+                        <div id="clothes" onclick="selectClothing(6, 6)">
+                            <img src="./img/clothes.png">
+                            <span>Тапочки</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-content" class="content-section" style="display:none;">
+                    <div id="hair">
+                        <h1>Прическа</h1>
+                        <div class="skip-hair">
+                            <button class="arrow-button" id="left-arrow">&#10094;</button>
+                            <h2 id="hair-name">Неформал</h2>
+                            <button class="arrow-button" id="right-arrow">&#10095;</button>
+                        </div>
+                    </div>
+                    <div id="hair-color">
+                        <h1>Цвет прически</h1>
+                        <div class="color-hair">
+                            <div class="color" style="background: rgb(28, 31, 33);" id="hair-0"></div>
+                            <div class="color" style="background: rgb(49, 46, 44);" id="hair-2"></div>
+                            <div class="color" style="background: rgb(127, 104, 78);" id="hair-9"></div>
+                            <div class="color" style="background: rgb(170, 170, 170);" id="hair-28"></div>
+                            <div class="color" style="background: rgb(75, 50, 31);" id="hair-4"></div>
+                            <div class="color" style="background: rgb(197, 197, 197);" id="hair-29"></div>
+                            <div class="color" style="background: rgb(235, 75, 147);" id="hair-34"></div>
+                            <div class="color" style="background: rgb(70, 57, 85);" id="hair-30"></div>
+                            <div class="color" style="background: rgb(155, 107, 98);" id="hair-22"></div>
+                            <div class="color" style="background: rgb(218, 195, 142);" id="hair-15"></div>
+                            <div class="color" style="background: rgb(229, 177, 3);" id="hair-46"></div>
+                            <div class="color" style="background: rgb(157, 122, 80);" id="hair-63"></div>
+                        </div>
+                    </div>
+                    <div id="beard">
+                        <h1>Борода</h1>
+                        <div class="skip-beard">
+                            <button class="arrow-button" id="left-arrow-beard">&#10094;</button>
+                            <h2 id="beard-name">Щетина</h2>
+                            <button class="arrow-button" id="right-arrow-beard">&#10095;</button>
+                        </div>
+                    </div>
+                    <div id="beard-color">
+                        <h1>Цвет бороды</h1>
+                        <div class="color-beard">
+                            <div class="color" style="background: rgb(28, 31, 33);" id="beard-0"></div>
+                            <div class="color" style="background: rgb(49, 46, 44);" id="beard-2"></div>
+                            <div class="color" style="background: rgb(127, 104, 78);" id="beard-9"></div>
+                            <div class="color" style="background: rgb(170, 170, 170);" id="beard-28"></div>
+                            <div class="color" style="background: rgb(75, 50, 31);" id="beard-4"></div>
+                            <div class="color" style="background: rgb(197, 197, 197);" id="beard-29"></div>
+                            <div class="color" style="background: rgb(235, 75, 147);" id="beard-34"></div>
+                            <div class="color" style="background: rgb(70, 57, 85);" id="beard-30"></div>
+                            <div class="color" style="background: rgb(155, 107, 98);" id="beard-22"></div>
+                            <div class="color" style="background: rgb(218, 195, 142);" id="beard-15"></div>
+                            <div class="color" style="background: rgb(229, 177, 3);" id="beard-46"></div>
+                            <div class="color" style="background: rgb(157, 122, 80);" id="beard-63"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="brows">
+                        <h1>Брови</h1>
+                        <div class="skip-brows">
+                            <button class="arrow-button" id="left-arrow-brows">&#10094;</button>
+                            <h2 id="brows-name">Тонкие</h2>
+                            <button class="arrow-button" id="right-arrow-brows">&#10095;</button>
+                        </div>
+                    </div>
+                    <div id="brows-color">
+                        <h1>Цвет бровей</h1>
+                        <div class="color-brows">
+                            <div class="color" style="background: rgb(28, 31, 33);" id="brows-0"></div>
+                            <div class="color" style="background: rgb(49, 46, 44);" id="brows-2"></div>
+                            <div class="color" style="background: rgb(127, 104, 78);" id="brows-9"></div>
+                            <div class="color" style="background: rgb(170, 170, 170);" id="brows-28"></div>
+                            <div class="color" style="background: rgb(75, 50, 31);" id="brows-4"></div>
+                            <div class="color" style="background: rgb(197, 197, 197);" id="brows-29"></div>
+                            <div class="color" style="background: rgb(235, 75, 147);" id="brows-34"></div>
+                            <div class="color" style="background: rgb(70, 57, 85);" id="brows-30"></div>
+                            <div class="color" style="background: rgb(155, 107, 98);" id="brows-22"></div>
+                            <div class="color" style="background: rgb(218, 195, 142);" id="brows-15"></div>
+                            <div class="color" style="background: rgb(229, 177, 3);" id="brows-46"></div>
+                            <div class="color" style="background: rgb(157, 122, 80);" id="brows-63"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="makeup">
+                        <h1>Макияж</h1>
+                        <div class="skip-makeup">
+                            <button class="arrow-button" id="left-arrow-makeup">&#10094;</button>
+                            <h2 id="makeup-name">Череп</h2>
+                            <button class="arrow-button" id="right-arrow-makeup">&#10095;</button>
+                        </div>
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+    <div id="confirmation-menu" class="confirmation-menu">
+        <p>Вы уверены, что хотите завершить?</p>
+        <button onclick="confirmDone()">Да</button>
+        <button onclick="closeConfirmationMenu()">Отмена</button>
+    </div>
+    
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.9"></script>
+<script src="./js/index.js"></script>

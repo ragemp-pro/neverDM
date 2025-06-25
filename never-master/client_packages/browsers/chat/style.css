@@ -1,0 +1,98 @@
+
+
+html,
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0;
+  padding: 0;
+  margin: 15px 0 0 20px;
+}
+html ::-webkit-scrollbar,
+body ::-webkit-scrollbar {
+  width: 0;
+}
+html ul,
+body ul {
+  padding: 0;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+
+  font-family: 14px;
+  width: 550px;
+  height: 250px;
+  overflow-y: scroll;
+}
+html ul li,
+body ul li {
+  margin-top: 9px;
+  line-height: 17px;
+  letter-spacing: 3%;
+  font-family: 'Roboto', sans-serif;
+
+  font-weight: 600;
+  color: #fff;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  word-wrap: break-word;
+}
+html ul li img,
+body ul li img {
+  height: 14px;
+}
+html label,
+body label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: rgba(14, 18, 21, 0.57);
+  padding: 15px 15px 15px 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+html label input,
+body label input {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Roboto', sans-serif;
+  
+  font-weight: 100;
+  width: 500px;
+  color: #fff;
+}
+html label input::-webkit-input-placeholder, body label input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+html label input::-moz-placeholder, body label input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+html label input:-ms-input-placeholder, body label input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+html label input::-ms-input-placeholder, body label input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+html label input::placeholder,
+body label input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}

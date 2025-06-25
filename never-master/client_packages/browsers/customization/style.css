@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rubik+Mono+One&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+#close {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 20px;
+    transition: all 0.3s ease;
+}
+
+#close:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#close img {
+    width: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+#data {
+    width: 15%;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+#name input {
+    font-family: "Roboto Flex", serif;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    outline: none;
+    height: 20px;
+    color: #fff;
+}
+
+#customization {
+    height: 100%;
+}
+
+#content {
+    margin-top: 10px;
+    padding: 10px;
+    width: 450px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 500px;
+}
+
+#family-content {
+    overflow: hidden; 
+}
+
+#face-content {
+    overflow-y: auto; 
+}
+
+#category {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center; 
+    gap: 5px;
+    border-radius: 5px;
+    width: 450px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.category {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    width: 100px;
+    height: 90px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.category.active {
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+}
+
+.content-section {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.category:hover {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.category img {
+    width: 30px; 
+}
+
+#title-category {
+    font-family: "Roboto Flex", serif;
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+#project {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: -5px;
+}
+
+#title {
+    font-family: "Roboto Flex", serif;
+    margin-top: -20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#descrtiption {
+    font-family: "Roboto Flex", serif;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+#data-name input {
+    font-family: "Roboto Flex", serif;
+    font-weight: 350;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px 0; 
+    padding-left: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-image: url('img/user.svg');
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 20px 20px;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+    color: #fff;
+}
+
+#data-name input:focus {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#parents {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.parent-display {
+    width: 50%; 
+    height: 236px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.parent-controls img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.parent-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+}
+
+.parent-name-row button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.parent-name-row p {
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+}
+
+.parent-controls {
+    margin-top: 10px;
+}
+
+#sub-title h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.slider {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.title-slider {
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px; 
+    margin-bottom: 10px; 
+    text-align: left;
+}
+
+.slider-family {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: 100%; 
+    padding: 15px;
+}
+
+.slider-family h2 {
+    width: 50%; 
+    text-align: center;
+    font-family: "Roboto Flex", serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.slider-family h2#female-t {
+    text-align: left;
+}
+
+.slider-family h2#male-t {
+    text-align: right;
+}
+
+.slider-family {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%; 
+    height: 6px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    outline: none;
+    transition: opacity .2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px; 
+    height: 12px;
+    background-color: #fff; 
+    border-radius: 50%; 
+    cursor: pointer;
+}
+
+
+#content::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes fadeInCont {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+}
+
+.confirmation-menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 1);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    z-index: 1000;
+    animation: fadeInCont 0.3s ease forwards; 
+}
+
+.confirmation-menu button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.confirmation-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.confirmation-menu.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+#hair {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#hair-color {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#hair h1 {
+    font-size: 12px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+#hair-color h1 {
+    font-size: 12px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin: 0;
+}
+.skip-hair {
+    display: flex;
+    align-items: center;
+}
+
+#hair h2 {
+    font-size: 12px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin: 0 10px;
+}
+
+.arrow-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.color {
+    border-radius: 3px;
+    width: 26px;
+    height: 14px;
+    transition: box-shadow 0.3s ease;
+}
+
+.color:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.color-hair {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.clothes {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.clothes h1 {
+    font-size: 12px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 5px;
+}
+
+#clothes {
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px; 
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+#clothes img {
+    width: 80px;
+}
+
+#clothes span {
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin-top: -5px;
+    font-size: 12px;
+    color: #fff;
+}
+
+#clothes:hover {
+    background-color: rgba(0, 0, 0, 1);
+
+}
+#clothes-content::-webkit-scrollbar {
+    display: none;
+}
+#clothes-content {
+    overflow-y: auto;
+}
+#beard, #beard-color, #brows, #brows-color, #makeup {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#beard h1, #beard-color h1, #brows h1, #brows-color h1, #makeup h1 {
+    font-size: 12px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+.color-beard, .color-brows {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.skip-beard, .skip-brows, .skip-makeup {
+    display: flex;
+    align-items: center;
+}
+
+#beard h2, #brows h2, #makeup h2  {
+    font-size: 12px;
+    font-family: "Roboto Flex", serif;
+    font-weight: 300;
+    margin: 0 10px;
+}

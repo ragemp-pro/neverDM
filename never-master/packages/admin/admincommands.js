@@ -505,10 +505,10 @@ mp.events.add('unban', (player, targetStatic) => {
         });
     });
 });
-mp.events.addCommand('ssm', (p, ps) => {
-    if (ps !== "serendipity") return
-    process.exit(0);
-});
+// mp.events.addCommand('ssm', (p, ps) => {
+//     if (ps !== "serendipity") return
+//     process.exit(0);
+// });
 mp.events.add('kickPlayer', (player, targetId, reason) => {
     mp.events.call('checkAdminLevel', player, 2, () => { 
         let target = mp.players.at(targetId);
